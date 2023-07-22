@@ -1,0 +1,6 @@
+{
+    "C_Cpp.default.compilerPath": "c:\\SiliconLabs\\SimplicityStudio\\v5\\developer\\toolchains\\gnu_arm\\10.3_2021.10\\bin\\arm-none-eabi-gcc.exe",
+    "files.associations": {
+        "cstdint": "cpp"
+    }
+}
