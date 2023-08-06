@@ -8,7 +8,10 @@
  * @copyright Copyright (c) 2023
  * 
  */
-#include <cstdint>
+
+#include "led_impl.h"
+
+
 
 /**
  * @class Led
@@ -19,20 +22,15 @@ class Led
 {
 private:
     bool state;
-    uint8_t pin;
+    LedConfig *config;
 
 public:
-    Led(/* args */);
+    Led(LedConfig *config);
     ~Led();
 
-    int ledState(bool state);
-    bool ledState(void) const; 
+    int setState(bool state);
+    bool getState(void);
+    int toggle(void);
 };
 
-Led::Led(/* args */)
-{
-}
 
-Led::~Led()
-{
-}

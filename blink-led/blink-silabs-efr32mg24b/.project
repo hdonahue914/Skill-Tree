@@ -32,6 +32,16 @@
 	</natures>
 	<linkedResources>
 		<link>
+			<name>include</name>
+			<type>2</type>
+			<location>C:/Users/Hwdon/SourceCode/Skill-Tree/blink-led/include</location>
+		</link>
+		<link>
+			<name>src</name>
+			<type>2</type>
+			<location>C:/Users/Hwdon/SourceCode/Skill-Tree/blink-led/src</location>
+		</link>
+		<link>
 			<name>gecko_sdk_4.3.0/hardware/board/inc/sl_board_control.h</name>
 			<type>1</type>
 			<locationURI>STUDIO_SDK_LOC/hardware/board/inc/sl_board_control.h</locationURI>

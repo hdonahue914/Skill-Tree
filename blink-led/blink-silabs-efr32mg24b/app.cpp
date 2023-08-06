@@ -16,6 +16,19 @@
  ******************************************************************************/
 #include "em_gpio.h"
 #include "sl_udelay.h"
+#include "blink.h"
+
+struct LedConfig
+{
+    volatile GPIO_Port_TypeDef port;
+    unsigned int pin;
+    GPIO_Mode_TypeDef mode;
+};
+
+LedConfig ledConfig0 {gpioPortB, 02U, gpioModePushPull};
+LedConfig *pLedConfig0 = &ledConfig0;
+Led led0((LedConfig*) pLedConfig0);;
+Led* pLed0 = &led0;
 /***************************************************************************//**
  * Initialize application.
  ******************************************************************************/
@@ -23,12 +36,13 @@ void app_init(void)
 {
 //  UDELAY_Calibrate();
 
-  GPIO_PinModeSet ( gpioPortB,
-  02U,
-  gpioModePushPull,
-  0U
-  );
-  GPIO_PinOutSet(gpioPortB, 02U);
+//  GPIO_PinModeSet ( gpioPortB,
+//  02U,
+//  gpioModePushPull,
+//  0U
+//  );
+//  GPIO_PinOutSet(gpioPortB, 02U);
+
 }
 
 /***************************************************************************//**
@@ -39,5 +53,6 @@ void app_process_action(void)
   sl_udelay_wait(100000U);
   sl_udelay_wait(100000U);
   sl_udelay_wait(100000U);
-  GPIO_PinOutToggle(gpioPortB, 02U);
+//  GPIO_PinOutToggle(gpioPortB, 02U);
+  pLed0->toggle();
 }
